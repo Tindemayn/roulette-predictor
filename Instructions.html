@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Käyttöohjeet - Ruletin Ennustaja</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="instructionsTitle">Käyttöohjeet - Ruletin Ennustaja</h1>
+    
+    <div id="languageSelector">
+        <label for="language">Kieli:</label>
+        <select id="language" onchange="changeLanguage()">
+            <option value="fi" selected>Suomi</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
+    <p id="welcomeMessage">Tervetuloa käyttämään Ruletin Ennustaja -ohjelmaa! Tässä ohjelmassa voit ennustaa seuraavan ruletin numeron sekä laskea Martingale-strategian mukaiset panokset.</p>
+    
+    <h2 id="instructionsHeading">Käyttöohjeet</h2>
+    <ol>
+        <li>Syötä viimeinen arvottu numero kenttään <strong>Viimeinen numero</strong>.</li>
+        <li>Syötä heittojen välinen aika sekunteina kenttään <strong>Heiton väli</strong>.</li>
+        <li>Syötä yhden kierroksen aika sekunteina kenttään <strong>Yhden kierroksen aika</strong>.</li>
+        <li>Jos edellinen panos oli hävitty, syötä sen arvo kenttään <strong>Edellinen panos</strong>. Tämä kenttä ei ole pakollinen.</li>
+        <li>Valitse vetotyyppi pudotusvalikosta <strong>Veto tyyppi</strong>.</li>
+        <li>Valitse montako kohdetta olet panostanut pudotusvalikosta <strong>Montako kohdetta panostettu</strong>.</li>
+        <li>Paina <strong>Laske</strong> -painiketta.</li>
+    </ol>
+    
+    <h2 id="resultsHeading">Tulokset</h2>
+    <p>Tulokset näytetään laskennan jälkeen:</p>
+    <ul>
+        <li><strong>Todennäköisin numero</strong>: Arvotaan ruletin perusteella.</li>
+        <li><strong>Kolme todennäköistä numeroa</strong>: Näyttää kolme todennäköisintä numeroa.</li>
+        <li><strong>Viisi todennäköistä numeroa</strong>: Näyttää viisi todennäköisintä numeroa.</li>
+        <li><strong>Todennäköisin tusina</strong>: Arvotaan ruletin perusteella.</li>
+        <li><strong>Todennäköisin väri</strong>: Arvotaan ruletin perusteella.</li>
+        <li><strong>Seuraava panos (Martingale)</strong>: Laskee Martingale-strategian mukaisen seuraavan panoksen.</li>
+    </ul>
+    
+    <a href="index.html" id="backLink">Palaa takaisin</a>
+
+    <script src="script.js"></script>
+</body>
+</html>
