@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruletin Ennustaja</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="pageTitle">Ruletin Ennustaja</h1>
+    
+    <!-- Kielivalikko -->
+    <div id="languageSelector">
+        <label for="language">Kieli:</label>
+        <select id="language" onchange="changeLanguage()">
+            <option value="fi" selected>Suomi</option>
+            <option value="en">English</option>
+        </select>
+    </div>
+
+    <a href="instructions.html" id="instructionsLink">Käyttöohjeet</a>
+
+    <form id="inputForm">
+        <label for="lastNumber" id="lastNumberLabel">Viimeinen numero:</label>
+        <input type="number" id="lastNumber" required>
+        
+        <label for="interval" id="intervalLabel">Heiton väli (sekunteina):</label>
+        <input type="number" id="interval" required>
+        
+        <label for="rotationTime" id="rotationTimeLabel">Yhden kierroksen aika (sekunteina):</label>
+        <input type="number" id="rotationTime" required>
+        
+        <label for="previousBet" id="previousBetLabel">Edellinen panos (jos hävitty):</label>
+        <input type="number" id="previousBet">
+        
+        <label for="betType" id="betTypeLabel">Veto tyyppi:</label>
+        <select id="betType" required>
+            <option value="straight">Yksittäinen numero (35:1)</option>
+            <option value="split">Kaksi numeroa (17:1)</option>
+            <option value="street">Kolme numeroa (11:1)</option>
+            <option value="corner">Neljä numeroa (8:1)</option>
+            <option value="line">Kuusi numeroa (5:1)</option>
+            <option value="dozen">Tusina (2:1)</option>
+            <option value="column">Sarake (2:1)</option>
+            <option value="even">Parillinen/pariton (1:1)</option>
+            <option value="lowhigh">Pieni/suuri (1:1)</option>
+            <option value="color">Punainen/musta (1:1)</option>
+        </select>
+        
+        <label for="numberOfBets" id="numberOfBetsLabel">Montako kohdetta panostettu:</label>
+        <select id="numberOfBets" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        
+        <button type="submit" id="submitButton">Laske</button>
+    </form>
+
+    <div id="results">
+        <h2 id="resultsTitle">Tulokset</h2>
+        <p id="singleResult"></p>
+        <p id="threeNumbers"></p>
+        <p id="fiveNumbers"></p>
+        <p id="dozen"></p>
+        <p id="color"></p>
+        <p id="nextBet"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
